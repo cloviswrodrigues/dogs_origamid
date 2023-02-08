@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
+:root {
+    --color-yellow: #fb1;
+    --color-brown: #764701;
+    --color-light-gray: rgb(136, 136, 136);
+    --color-dark-gray: #666;
+    --color-black: #333;
+    --color-white: white;
+
+    --font-first: Helvetica, Arial, sans-serif;;
+    --font-second: 'Spectral', Georgia;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
