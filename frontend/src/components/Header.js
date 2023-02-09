@@ -6,10 +6,12 @@ import style from "./Header.module.css";
 const Header = () => {
   return (
     <header className={style.header}>
-      <LogoSVG />
-      <div>
-        <span>Login / Criar</span>
-        <UserSVG />
+      <div className={style.wrapper + " container"}>
+        <LogoSVG />
+        <div className={style.login}>
+          <a href="#">Login / Criar</a>
+          <UserSVG />
+        </div>
       </div>
     </header>
   );

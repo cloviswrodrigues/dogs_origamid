@@ -21,3 +21,14 @@
 html {
     font-size: 10px;
 }
+
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
