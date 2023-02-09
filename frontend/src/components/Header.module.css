@@ -1,0 +1,23 @@
+.header {
+    height: 6rem;
+    box-shadow: 1px 1px 1px rgba(0,0,0, .1);    
+}
+
+.header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header .wrapper .login {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+    color: var(--color-black);
+}
+
+.header .wrapper .login a {
+    margin-right: 1rem;
+}
