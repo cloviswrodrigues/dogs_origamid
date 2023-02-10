@@ -1,0 +1,16 @@
+.footer {
+    background-color: var(--color-yellow);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    font-size: 1.6rem;
+    font-family: var(--font-first);
+    color: var(--color-brown);
+}
+
+.footer svg * {
+    fill: var(--color-brown);
+}
