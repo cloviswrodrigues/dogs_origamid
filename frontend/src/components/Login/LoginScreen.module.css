@@ -1,0 +1,56 @@
+.login {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login .loginImg {
+    width: 50%;
+    background: url(../../assets/login.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.login .loginForm {
+    width: 50%;
+    padding: 5rem;
+    margin-top: 16rem;
+}
+
+.login .loginForm form {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+    color: var(--color-black);
+    margin-bottom: 3rem;
+}
+
+.login .loginForm form label {
+    margin: 2rem 0 .5rem;
+}
+
+
+.login .loginForm form button {
+    margin-top: 1.4rem;
+}
+
+.login .loginForm .lostPassword {
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+    color: var(--color-dark-gray);
+    border-bottom: 2px solid var(--color-dark-gray);
+}
+
+.login .loginForm .register {
+    margin-top: 6rem;
+}
+
+.login .loginForm .register p {
+    margin-top: 2rem;
+    font-family: var(--font-first);
+    font-size: 1.6rem; 
+    color: var(--color-black);
+}
+
+.login .loginForm .register a {
+    margin-top: 2rem;
+}

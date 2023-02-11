@@ -2,8 +2,11 @@
 
 :root {
     --color-yellow: #fb1;
+    --color-light-yellow: #fea;
     --color-brown: #764701;
-    --color-light-gray: rgb(136, 136, 136);
+    --color-light-gray: #eee;
+    --color-gray: #ddd;
+    --color-medium-gray: rgb(136, 136, 136);
     --color-dark-gray: #666;
     --color-black: #333;
     --color-white: white;
@@ -31,4 +34,87 @@ html {
 a {
     all: unset;
     cursor: pointer;
+}
+
+.title-1 {
+    font-family: var(--font-second);
+    font-size: 5rem;
+    color: var(--color-black);
+    position: relative;    
+    line-height: 1;
+}
+
+.title-1::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -6px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 3px;
+    background-color: var(--color-yellow);
+    z-index: -1;
+}
+
+.title-2 {
+    font-family: var(--font-second);
+    font-size: 3.4rem;
+    color: var(--color-black);
+    border-bottom: 2px;
+    line-height: 1;
+}
+
+.title-2::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: .8rem;
+    background-color: var(--color-gray);
+    border-radius: .5rem;
+}
+
+
+input {
+    background-color: var(--color-light-gray);
+    width: 100%;
+    max-width: 40rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-light-gray);
+    border-radius: .6rem;
+    outline: none;
+    transition: all .2s;
+}
+
+input:hover,
+input:focus {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-yellow);
+    box-shadow: 0px 0px 0px 3px var(--color-light-yellow);    
+}
+
+.btn {
+    display: block;
+    background-color: var(--color-yellow);
+    border: none;
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--color-brown);
+    padding: 1.2rem 2rem;
+    border-radius: .5rem;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 0px 3px var(--color-light-yellow),
+                0px 0px 0px 4px var(--color-yellow);
+}
+
+.btn.btn-small {
+    max-width: 6rem;
+}
+
+.btn.btn-medium {
+    max-width: 12rem;
 }
