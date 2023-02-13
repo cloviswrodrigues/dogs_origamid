@@ -118,3 +118,16 @@ input:focus {
 .btn.btn-medium {
     max-width: 12rem;
 }
+
+.animeLeft {
+    opacity: 0;
+    transform: translateX(-10%);
+    animation: animeLeft .1s forwards;
+}
+
+@keyframes animeLeft {
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

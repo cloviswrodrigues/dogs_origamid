@@ -6,7 +6,7 @@ const LoginScreen = () => {
   return (
     <main className={style.login}>
       <div className={style.loginImg}></div>
-      <div className={style.loginForm}>
+      <div className={`animeLeft ${style.loginForm}`}>
         <h1 className="title-1">Login</h1>
         <form action="">
           <label htmlFor="user">Usuário</label>
