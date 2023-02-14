@@ -1,19 +1,44 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
 
 import style from "./LoginScreen.module.css";
 
 const LoginScreen = () => {
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const { loginPost } = React.useContext(UserContext);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    loginPost(username, password);
+  }
+
   return (
     <main className={style.login}>
       <div className={style.loginImg}></div>
       <div className={`animeLeft ${style.loginForm}`}>
         <h1 className="title-1">Login</h1>
         <form action="">
-          <label htmlFor="user">Usuário</label>
-          <input type="text" name="user" />
+          <label htmlFor="username">Usuário</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={({ target }) => setUsername(target.value)}
+          />
           <label htmlFor="password">Senha</label>
-          <input type="password" name="password" />
-          <button type="submit" className="btn btn-medium">
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+          />
+          <button
+            type="submit"
+            className="btn btn-medium"
+            onClick={handleSubmit}
+          >
             Entrar
           </button>
         </form>
