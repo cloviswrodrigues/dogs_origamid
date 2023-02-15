@@ -15,7 +15,7 @@ const LoginScreen = () => {
   }
 
   return (
-    <div className={`animeLeft ${style.loginForm}`}>
+    <div className={style.loginForm}>
       <h1 className="title-1">Login</h1>
       <form action="">
         <label htmlFor="username">Usuário</label>
@@ -36,13 +36,13 @@ const LoginScreen = () => {
           Entrar
         </button>
       </form>
-      <Link to="/lost-password" className={style.lostPassword}>
+      <Link to="/login/lost-password" className={style.lostPassword}>
         Perdeu a Senha?
       </Link>
       <div className={style.register}>
         <h2 className="title-2">Cadastre-se</h2>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
-        <Link to="/register" className="btn btn-small">
+        <Link to="/login/register" className="btn btn-small">
           Cadastro
         </Link>
       </div>

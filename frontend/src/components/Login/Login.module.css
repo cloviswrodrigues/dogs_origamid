@@ -11,3 +11,9 @@
     background: url(../../assets/login.jpg) no-repeat center;
     background-size: cover;
 }
+
+.login .forms {
+    width: 100%;
+    padding: 5rem;
+    margin-top: 16rem;
+}
