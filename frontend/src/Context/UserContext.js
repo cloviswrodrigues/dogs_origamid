@@ -19,6 +19,7 @@ export const UserStorage = ({ children }) => {
   function getUser() {
     request(USER_GET(token)).then(() => {
       setUser(data);
+      console.log("user: ", user);
     });
   }
 
