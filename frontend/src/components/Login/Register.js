@@ -10,7 +10,7 @@ const Register = () => {
     event.preventDefault();
   }
   return (
-    <div className={style.loginForm}>
+    <div className={`animeLeft ${style.loginForm}`}>
       <h1 className="title-1">Cadastre-se</h1>
       <form action="">
         <label htmlFor="username">Usuário</label>

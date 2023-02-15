@@ -93,7 +93,6 @@ input:focus {
 }
 
 .btn {
-    display: block;
     background-color: var(--color-yellow);
     border: none;
     font-family: var(--font-first);
@@ -111,13 +110,6 @@ input:focus {
                 0px 0px 0px 4px var(--color-yellow);
 }
 
-.btn.btn-small {
-    max-width: 6rem;
-}
-
-.btn.btn-medium {
-    max-width: 12rem;
-}
 
 .animeLeft {
     opacity: 0;

@@ -1,6 +1,7 @@
 .loginForm form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     font-family: var(--font-first);
     font-size: 1.6rem;
     color: var(--color-black);
@@ -28,7 +29,7 @@
 }
 
 .loginForm .register p {
-    margin-top: 2rem;
+    margin: 2rem 0;
     font-family: var(--font-first);
     font-size: 1.6rem; 
     color: var(--color-black);

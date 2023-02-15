@@ -8,7 +8,7 @@ import Register from "./Register";
 const Login = () => {
   return (
     <main className={style.login}>
-      <section className={`animeLeft ${style.forms}`}>
+      <section className={style.forms}>
         <Routes>
           <Route path="/" element={<LoginScreen />} />
           <Route path="register" element={<Register />} />
