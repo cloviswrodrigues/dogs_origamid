@@ -1,0 +1,45 @@
+.account {
+    padding-top: 3rem;
+    height: 100vh;
+}
+
+.accountHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.accountHeader nav{
+    display: flex;
+    gap: 2rem;
+}
+
+.accountHeader svg {
+    padding: .5rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    background: var(--color-light-gray);
+    border: 1px solid var(--color-light-gray);
+    box-shadow: 0px 0px 0px 3px var(--color-light-gray);
+    border-radius: .2rem;
+}
+
+.accountHeader svg:hover {
+    background-color: var(--color-white);    
+    border: 1px solid var(--color-black);
+    border-radius: .2rem;
+}
+
+.accountHeader .active svg {
+    background: var(--color-white);
+    border: 1px solid var(--color-yellow) !important;
+    box-shadow: 0px 0px 0px 3px var(--color-light-yellow) !important; 
+    border-radius: .2rem;   
+}
+
+.accountHeader .active svg path,
+.accountHeader .active svg rect {
+    fill: var(--color-yellow);    
+}
+
