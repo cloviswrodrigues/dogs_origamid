@@ -1,6 +1,10 @@
 import React from "react";
 
-const AccountMain = () => {
+const AccountMain = ({ setPageTitle }) => {
+  React.useEffect(() => {
+    setPageTitle("Minha Conta");
+  }, []);
+
   return <div>conta</div>;
 };
 

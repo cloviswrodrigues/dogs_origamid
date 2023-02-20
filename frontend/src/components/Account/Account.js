@@ -11,11 +11,12 @@ import AccountStatistics from "./AccountStatistics";
 import AccountPost from "./AccountPost";
 
 const Account = () => {
+  const [pageTitle, setPageTitle] = React.useState("");
   return (
     <main className={style.account}>
       <section className="container">
         <div className={style.accountHeader}>
-          <h1 className="title-1">Minha Conta</h1>
+          <h1 className="title-1">{pageTitle}</h1>
           <nav>
             <NavLink
               to="/conta"
@@ -53,9 +54,18 @@ const Account = () => {
           </nav>
         </div>
         <Routes>
-          <Route path="/" element={<AccountMain />} />
-          <Route path="estatisticas" element={<AccountStatistics />} />
-          <Route path="postar" element={<AccountPost />} />
+          <Route
+            path="/"
+            element={<AccountMain setPageTitle={setPageTitle} />}
+          />
+          <Route
+            path="estatisticas"
+            element={<AccountStatistics setPageTitle={setPageTitle} />}
+          />
+          <Route
+            path="postar"
+            element={<AccountPost setPageTitle={setPageTitle} />}
+          />
         </Routes>
       </section>
     </main>

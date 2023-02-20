@@ -1,0 +1,20 @@
+.AccountPost {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+}
+
+label {
+    margin: 2rem 0 .5rem;    
+}
+
+input[type="file"] {
+    margin: 2rem 0 2rem;
+}
+
+button {
+    padding: 1.2rem 3.5rem !important;
+}

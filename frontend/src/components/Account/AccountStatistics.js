@@ -1,6 +1,9 @@
 import React from "react";
 
-const AccountStatistics = () => {
+const AccountStatistics = ({ setPageTitle }) => {
+  React.useEffect(() => {
+    setPageTitle("Estatísticas");
+  }, []);
   return <div>conta estatisticas</div>;
 };
 
