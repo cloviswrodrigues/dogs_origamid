@@ -9,8 +9,11 @@ const useFetch = () => {
     let response;
     let json;
     try {
+      setStatus(null);
       response = await fetch(url, options);
       json = await response.json();
+      console.log("url: ", url);
+      console.log("status: ", response.status);
       setStatus(response.status);
       setData(json);
     } catch (error) {

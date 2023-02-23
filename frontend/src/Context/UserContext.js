@@ -9,23 +9,19 @@ export const UserStorage = ({ children }) => {
   const [token, setToken] = React.useState(null);
   const { status, data, error, request } = useFetch();
 
-  function loginPost(username, password) {
-    request(TOKEN_POST({ username, password })).then((response) => {
-      console.log("res: ", response);
-      if (status === 200) {
-        setToken(data.token);
-        getUser();
-        return error;
-      }
-      console.log("retorna erro");
-      return error;
-    });
+  async function loginPost(username, password) {
+    await request(TOKEN_POST({ username, password }));
+    if (status === 200) {
+      console.log("deu certoo! login post");
+      getUser();
+    } else {
+      console.log("deu errado");
+    }
   }
 
   function getUser() {
     request(USER_GET(token)).then(() => {
       setUser(data);
-      console.log("user: ", user);
     });
   }
 
