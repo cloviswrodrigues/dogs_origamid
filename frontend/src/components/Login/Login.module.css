@@ -13,7 +13,14 @@
 }
 
 .login .forms {
+    position: relative;
     width: 100%;
     padding: 5rem;
     margin-top: 16rem;
+}
+
+.erroForm {
+    position: absolute;
+    bottom: 0;
+    color: var(--color-red);
 }

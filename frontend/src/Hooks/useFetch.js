@@ -16,7 +16,11 @@ const useFetch = () => {
       console.log("status: ", response.status);
       setStatus(response.status);
       setData(json);
+      if (status !== 200) {
+        setError("Dados Incorretos");
+      }
     } catch (error) {
+      console.log("caiu no catch");
       setError(error);
     }
     return { response };

@@ -7,17 +7,11 @@ import style from "./LoginScreen.module.css";
 const LoginScreen = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [errorLogin, setErrorLogin] = React.useState(null);
-  const { loginPost } = React.useContext(UserContext);
+  const { userLogin } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const error = await loginPost(username, password);
-    console.log("deu erro: ", error);
-    if (error) {
-      setErrorLogin(error);
-    }
-    console.log("alooo");
+    userLogin(username, password);
   }
 
   return (
@@ -42,7 +36,6 @@ const LoginScreen = () => {
           Entrar
         </button>
       </form>
-      {errorLogin && <p>Dados incorretos.</p>}
       <Link to="/login/lost-password" className={style.lostPassword}>
         Perdeu a Senha?
       </Link>
