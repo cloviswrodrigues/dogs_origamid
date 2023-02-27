@@ -38,3 +38,8 @@
 .loginForm .register a {
     margin-top: 2rem;
 }
+
+.erroForm {
+    margin-top: 1rem;
+    color: var(--color-red);
+}

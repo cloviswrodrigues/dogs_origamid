@@ -7,7 +7,7 @@ import style from "./LoginScreen.module.css";
 const LoginScreen = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, loading, error } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -32,9 +32,21 @@ const LoginScreen = () => {
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
-        <button type="submit" className="btn btn-medium" onClick={handleSubmit}>
-          Entrar
-        </button>
+        {loading ? (
+          <button className="btn btn-medium" disabled>
+            Carregando...
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="btn btn-medium"
+            onClick={handleSubmit}
+          >
+            Entrar
+          </button>
+        )}
+
+        {error && <p className={style.erroForm}>{error}</p>}
       </form>
       <Link to="/login/lost-password" className={style.lostPassword}>
         Perdeu a Senha?

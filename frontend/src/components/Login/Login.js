@@ -1,11 +1,15 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
 import style from "./Login.module.css";
 import LoginScreen from "./LoginScreen";
 import LostPassword from "./LostPassword";
 import Register from "./Register";
 
 const Login = () => {
+  const { login } = React.useContext(UserContext);
+
+  if (login === true) return <Navigate to="/conta" />;
   return (
     <main className={style.login}>
       <section className={style.forms}>

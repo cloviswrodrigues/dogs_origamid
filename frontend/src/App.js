@@ -10,8 +10,8 @@ import Account from "./components/Account/Account";
 function App() {
   return (
     <div className="App">
-      <UserStorage>
-        <BrowserRouter>
+      <BrowserRouter>
+        <UserStorage>
           <Header />
           <Routes>
             <Route path="/" element={<PhotoGrid />} />
@@ -19,8 +19,8 @@ function App() {
             <Route path="/conta/*" element={<Account />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
-      </UserStorage>
+        </UserStorage>
+      </BrowserRouter>
     </div>
   );
 }
