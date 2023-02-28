@@ -9,9 +9,11 @@ import { ReactComponent as LogoffSvg } from "../../assets/sair.svg";
 import AccountMain from "./AccountMain";
 import AccountStatistics from "./AccountStatistics";
 import AccountPost from "./AccountPost";
+import { UserContext } from "../../Context/UserContext";
 
 const Account = () => {
   const [pageTitle, setPageTitle] = React.useState("");
+  const { userLogout } = React.useContext(UserContext);
   return (
     <main className={style.account}>
       <section className="container">
@@ -43,14 +45,9 @@ const Account = () => {
             >
               <AddSvg />
             </NavLink>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? style.active : undefined
-              }
-            >
+            <button onClick={userLogout}>
               <LogoffSvg />
-            </NavLink>
+            </button>
           </nav>
         </div>
         <Routes>
