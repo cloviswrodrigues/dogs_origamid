@@ -1,4 +1,10 @@
 .AccountPost {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.AccountPost form {
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
@@ -17,8 +23,20 @@ input[type="file"] {
 
 .AccountPost button {
     padding: 1.2rem 3.5rem !important;
+    margin-bottom: 1rem;
 }
 
 button {
     border: none;
+}
+
+
+.AccountPost .preview {
+    width: 100%;
+    height: 90%;
+    margin: 4rem auto;
+    border-radius: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

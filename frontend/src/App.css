@@ -115,6 +115,10 @@ button:disabled {
     opacity: .5;
 }
 
+.msg-error {
+    font-size: 1.6rem;
+    color: var(--color-red);
+}
 
 .animeLeft {
     opacity: 0;
