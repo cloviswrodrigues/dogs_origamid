@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserStorage } from "./Context/UserContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PhotoGrid from "./components/Photos/PhotoGrid";
+import PhotoHome from "./components/Photos/PhotoHome";
 import Login from "./components/Login/Login";
 import Account from "./components/Account/Account";
 
@@ -14,7 +14,7 @@ function App() {
         <UserStorage>
           <Header />
           <Routes>
-            <Route path="/" element={<PhotoGrid />} />
+            <Route path="/" element={<PhotoHome />} />
             <Route path="/login/*" element={<Login />} />
             <Route path="/conta/*" element={<Account />} />
           </Routes>
