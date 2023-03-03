@@ -1,0 +1,18 @@
+.photoGrid {
+    margin-top: 5rem;
+}
+
+.photoGrid p {
+    font-size: 1.4rem;
+    font-family: var(--font-first);
+    font-style: italic;
+}
+
+.photoGrid .grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.photoGrid .grid img {
+    border-radius: .3rem;
+}

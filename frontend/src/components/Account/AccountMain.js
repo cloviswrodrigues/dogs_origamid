@@ -30,15 +30,7 @@ const AccountMain = ({ setPageTitle }) => {
     getAccountPhotos();
   }, []);
 
-  return (
-    <section>
-      {photos ? (
-        <PhotoGrid photos={photos} />
-      ) : (
-        <p>Não há nenhumm foto para ser exibida</p>
-      )}
-    </section>
-  );
+  return <PhotoGrid photos={photos} />;
 };
 
 export default AccountMain;
