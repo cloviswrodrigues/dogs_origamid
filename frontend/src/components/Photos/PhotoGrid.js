@@ -8,7 +8,7 @@ const PhotoGrid = ({ photos }) => {
       {photos ? (
         <div className={styles.grid}>
           {photos.map((photo) => (
-            <img src={photo.src} />
+            <div style={{ backgroundImage: `url(${photo.src})` }}></div>
           ))}
         </div>
       ) : (
