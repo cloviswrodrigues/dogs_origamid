@@ -12,9 +12,18 @@ const PhotoModal = ({ idPhoto }) => {
             alt=""
           />
         </div>
-        <div className={styles.modalInfo}></div>
-        <div className={styles.modalDogName}></div>
-        <div className={styles.modalDogInfo}></div>
+        <div className={styles.modalInfo}>
+          <div className={styles.action}>
+            <button className={styles.btnDelete}>Deletar</button>
+            <span className={styles.acess}>2</span>
+          </div>
+          <div className={`title-1 ${styles.modalDogName}`}>Jaja</div>
+          <div className={styles.modalDogInfo}>
+            <span>| 2kg</span>
+            <span>| 2 anos</span>
+          </div>
+        </div>
+
         <div className={styles.modalComents}></div>
         <div className={styles.modalFormComents}></div>
       </div>
