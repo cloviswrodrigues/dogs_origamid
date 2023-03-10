@@ -1,5 +1,7 @@
 import React from "react";
+
 import styles from "./PhotoModal.module.css";
+import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
 
 const PhotoModal = ({ idPhoto }) => {
   console.log("idPhoto: ", idPhoto);
@@ -19,13 +21,29 @@ const PhotoModal = ({ idPhoto }) => {
           </div>
           <div className={`title-1 ${styles.modalDogName}`}>Jaja</div>
           <div className={styles.modalDogInfo}>
-            <span>| 2kg</span>
+            <span>| 2 kg</span>
             <span>| 2 anos</span>
           </div>
         </div>
-
-        <div className={styles.modalComents}></div>
-        <div className={styles.modalFormComents}></div>
+        <div className={styles.modalComents}>
+          <ul>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+          </ul>
+        </div>
+        <div className={styles.modalFormComents}>
+          <form>
+            <textarea
+              className="input"
+              type="textarea"
+              placeholder="Comente..."
+            ></textarea>
+            <button type="submit">
+              <SendSvg />
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

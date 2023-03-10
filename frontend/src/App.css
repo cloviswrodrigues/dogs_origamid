@@ -79,7 +79,6 @@ img {
     border-radius: .5rem;
 }
 
-
 input:not([type="file"]) {
     background-color: var(--color-light-gray);
     width: 100%;
@@ -98,6 +97,28 @@ input:not([type="file"]):focus {
     box-shadow: 0px 0px 0px 3px var(--color-light-yellow);    
 }
 
+textarea {
+    font-size: 1.6rem;
+    font-family: var(--font-first);
+    background-color: var(--color-light-gray);
+    width: 100%;
+    max-width: 40rem;
+    padding: .8rem;
+    border: 1px solid var(--color-light-gray);
+    border-radius: .6rem;
+    outline: none;
+    transition: all .2s;
+    resize: none;
+}
+
+textarea:hover,
+textarea:focus {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-yellow);
+    box-shadow: 0px 0px 0px 3px var(--color-light-yellow);    
+}
+
+
 .btn {
     background-color: var(--color-yellow);
     border: none;
@@ -115,6 +136,7 @@ input:not([type="file"]):focus {
     box-shadow: 0px 0px 0px 3px var(--color-light-yellow),
                 0px 0px 0px 4px var(--color-yellow);
 }
+
 
 button:disabled {
     opacity: .5;

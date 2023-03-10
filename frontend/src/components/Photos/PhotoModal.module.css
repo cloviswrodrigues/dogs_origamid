@@ -16,7 +16,7 @@
     height: 60rem;
     border-radius: .5rem;
     display: grid;
-    grid-template: 2fr 3fr 1fr / 65% 35%;   
+    grid-template: 3fr 4fr 1fr / 65% 35%;   
 }
 
 .modalPhoto {
@@ -70,4 +70,46 @@
     height: 10px;
     background: url(../../assets/visualizacao-black.svg);
     margin-right: .5rem;
+}
+
+.modalDogInfo {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-family: var(--font-first);
+    font-weight: bold;
+}
+
+.modalDogInfo span {
+    margin-right: 3rem;
+}
+
+.modalComents {
+    padding-left: 3rem;
+}
+
+.modalComents ul li {
+    font-size: 1.6rem;
+    font-family: var(--font-first);
+    list-style: none;
+}
+
+.modalComentUser {
+    font-weight: bold;
+    margin-right: .5rem;
+}
+
+.modalFormComents {
+    padding: 1rem 1.5rem;
+}
+
+.modalFormComents form {
+    display: flex;
+    gap: 1.5rem;
+}
+
+
+.modalFormComents input {
+    height: 6rem;
+    padding: 1rem;
+    align-content: flex-start;
 }
