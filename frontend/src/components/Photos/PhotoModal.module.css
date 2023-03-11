@@ -16,17 +16,14 @@
     height: 60rem;
     border-radius: .5rem;
     display: grid;
-    grid-template: 3fr 4fr 1fr / 65% 35%;   
+    grid-template: 3fr 5fr 1fr / 65% 35%;   
+    overflow: hidden;
 }
 
 .modalPhoto {
     grid-row: span 5;
 }
 
-.modalPhoto img {
-    width: 100%;
-    height: 100%;
-}
 
 .modalInfo {
     padding: 3rem;
@@ -85,12 +82,15 @@
 
 .modalComents {
     padding-left: 3rem;
+    overflow: auto;
 }
 
 .modalComents ul li {
     font-size: 1.6rem;
     font-family: var(--font-first);
     list-style: none;
+    margin-bottom: 1rem;
+    word-break: break-all;
 }
 
 .modalComentUser {
@@ -112,4 +112,8 @@
     height: 6rem;
     padding: 1rem;
     align-content: flex-start;
+}
+
+.modalFormComents button {
+    background-color: transparent;
 }

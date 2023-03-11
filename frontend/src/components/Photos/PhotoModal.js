@@ -1,19 +1,20 @@
 import React from "react";
 
 import styles from "./PhotoModal.module.css";
-import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
+import SendSvg from "../Svg/SendSvg";
 
 const PhotoModal = ({ idPhoto }) => {
   console.log("idPhoto: ", idPhoto);
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modal}>
-        <div className={styles.modalPhoto}>
-          <img
-            src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445"
-            alt=""
-          />
-        </div>
+        <div
+          className={styles.modalPhoto}
+          style={{
+            background:
+              "url('https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445') no-repeat center",
+          }}
+        ></div>
         <div className={styles.modalInfo}>
           <div className={styles.action}>
             <button className={styles.btnDelete}>Deletar</button>
@@ -27,6 +28,66 @@ const PhotoModal = ({ idPhoto }) => {
         </div>
         <div className={styles.modalComents}>
           <ul>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
+            <li>
+              <span className={styles.modalComentUser}>dog:</span>teste
+            </li>
             <li>
               <span className={styles.modalComentUser}>dog:</span>teste
             </li>
