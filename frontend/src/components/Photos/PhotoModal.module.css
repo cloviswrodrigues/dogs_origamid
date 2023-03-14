@@ -104,7 +104,7 @@
 
 .modalFormComents form {
     display: flex;
-    gap: 1.5rem;
+    gap: .5rem;
 }
 
 
@@ -114,6 +114,30 @@
     align-content: flex-start;
 }
 
-.modalFormComents button {
-    background-color: transparent;
+
+.buttonSend {
+    cursor: pointer;
+    background: transparent;
+    padding: 0 1rem;
 }
+
+.buttonSend:focus svg path,
+.buttonSend:hover svg path {
+    fill: #fea;
+    stroke: #fb1;
+}
+
+.buttonSend:focus svg g,
+.buttonSend:hover svg g {
+    animation: latir 0.6s infinite;
+}
+
+@keyframes latir {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  

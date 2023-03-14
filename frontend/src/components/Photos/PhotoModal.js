@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./PhotoModal.module.css";
-import SendSvg from "../Svg/SendSvg";
+import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
 
 const PhotoModal = ({ idPhoto }) => {
   console.log("idPhoto: ", idPhoto);
@@ -100,7 +100,7 @@ const PhotoModal = ({ idPhoto }) => {
               type="textarea"
               placeholder="Comente..."
             ></textarea>
-            <button type="submit">
+            <button type="submit" className={styles.buttonSend}>
               <SendSvg />
             </button>
           </form>
