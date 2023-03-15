@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .modal {
@@ -22,6 +23,7 @@
 
 .modalPhoto {
     grid-row: span 5;
+    background-size: cover !important;
 }
 
 

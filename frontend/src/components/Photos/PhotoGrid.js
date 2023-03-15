@@ -3,10 +3,10 @@ import styles from "./PhotoGrid.module.css";
 import PhotoModal from "./PhotoModal";
 
 const PhotoGrid = ({ photos }) => {
-  const [openModal, setOpenModal] = React.useState(true);
+  const [openModal, setOpenModal] = React.useState(false);
   const [idPhoto, setIdPhoto] = React.useState(null);
   function openPhotoModal(idPhoto) {
-    console.log("open modal photo id: ", idPhoto);
+    setIdPhoto(idPhoto);
     setOpenModal(true);
   }
   return (
@@ -16,6 +16,7 @@ const PhotoGrid = ({ photos }) => {
           <div className={styles.grid}>
             {photos.map((photo) => (
               <div
+                key={photo.id}
                 className={styles.gridItem}
                 style={{ backgroundImage: `url(${photo.src})` }}
                 onClick={() => openPhotoModal(photo.id)}
