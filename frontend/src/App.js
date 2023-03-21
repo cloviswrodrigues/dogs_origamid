@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import PhotoHome from "./components/Photos/PhotoHome";
 import Login from "./components/Login/Login";
 import Account from "./components/Account/Account";
-import Loader from "./components/Loader";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
             <Route path="/login/*" element={<Login />} />
             <Route path="/conta/*" element={<Account />} />
           </Routes>
-          <Loader />
           <Footer />
         </UserStorage>
       </BrowserRouter>

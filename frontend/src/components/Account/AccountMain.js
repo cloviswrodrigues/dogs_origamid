@@ -1,9 +1,11 @@
 import React from "react";
 import { PHOTOS_GET } from "../../Api";
+import Loader from "../Loader";
 import PhotoGrid from "../Photos/PhotoGrid";
 
 const AccountMain = ({ setPageTitle }) => {
   const [photos, setPhotos] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
   async function getAccountPhotos() {
     const page = 1;
@@ -22,6 +24,8 @@ const AccountMain = ({ setPageTitle }) => {
       }
     } catch (error) {
       console.log("error: ", error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -30,6 +34,7 @@ const AccountMain = ({ setPageTitle }) => {
     getAccountPhotos();
   }, []);
 
+  if (loading) return <Loader />;
   return <PhotoGrid photos={photos} />;
 };
 
