@@ -3,11 +3,11 @@ import styles from "./PhotoGrid.module.css";
 import PhotoModal from "./PhotoModal";
 
 const PhotoGrid = ({ photos }) => {
-  const [openModal, setOpenModal] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
   const [idPhoto, setIdPhoto] = React.useState(null);
   function openPhotoModal(idPhoto) {
     setIdPhoto(idPhoto);
-    setOpenModal(true);
+    setShowModal(true);
   }
   return (
     <>
@@ -29,7 +29,9 @@ const PhotoGrid = ({ photos }) => {
           <p>Não há nenhumm foto para ser exibida...</p>
         )}
       </section>
-      {openModal && <PhotoModal idPhoto={idPhoto} />}
+      {showModal && (
+        <PhotoModal idPhoto={idPhoto} setShowModal={setShowModal} />
+      )}
     </>
   );
 };

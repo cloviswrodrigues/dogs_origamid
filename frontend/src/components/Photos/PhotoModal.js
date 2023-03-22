@@ -5,7 +5,7 @@ import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
 import { PHOTO_GET } from "../../Api";
 import Loader from "../Loader";
 
-const PhotoModal = ({ idPhoto }) => {
+const PhotoModal = ({ idPhoto, setShowModal }) => {
   const [photo, setPhoto] = React.useState(null);
 
   function getPhoto() {
@@ -21,8 +21,16 @@ const PhotoModal = ({ idPhoto }) => {
     getPhoto();
   }, []);
 
+  function handleModal(e) {
+    const { currentTarget, target } = e;
+
+    if (target == currentTarget) {
+      setShowModal(false);
+    }
+  }
+
   return (
-    <div className={styles.modalBackground}>
+    <div className={styles.modalBackground} onClick={handleModal}>
       {photo ? (
         <div className={styles.modal}>
           <div
@@ -49,7 +57,7 @@ const PhotoModal = ({ idPhoto }) => {
           <div className={styles.modalComents}>
             <ul>
               {photo.comments.map((comment) => (
-                <li>
+                <li key={comment.comment_ID}>
                   <span className={styles.modalComentUser}>
                     {comment.comment_author}:
                   </span>
