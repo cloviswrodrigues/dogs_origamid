@@ -19,6 +19,8 @@
     display: grid;
     grid-template: 3fr 5fr 1fr / 65% 35%;   
     overflow: hidden;
+    transform: scale(.8);
+    animation: arise 0.3s forwards;
 }
 
 .modalPhoto {
@@ -142,4 +144,15 @@
         opacity: 1;
     }
 }
+
+@keyframes arise {
+    from {
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+  
   
