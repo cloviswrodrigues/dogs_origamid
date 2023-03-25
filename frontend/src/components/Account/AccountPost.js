@@ -9,11 +9,13 @@ const AccountPost = ({ setPageTitle }) => {
   const [idade, setIdade] = React.useState("");
   const [img, setImg] = React.useState({});
   const [error, setError] = React.useState(false);
+  const [sendingImage, setSendingImage] = React.useState(false);
   const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
     setError(false);
+    setSendingImage(true);
     const formData = new FormData();
     formData.append("nome", nome);
     formData.append("peso", peso);
@@ -28,12 +30,11 @@ const AccountPost = ({ setPageTitle }) => {
     } else {
       setError(true);
     }
+    setSendingImage(false);
   }
 
   function handleImage({ target }) {
     let url = URL.createObjectURL(target.files[0]);
-    console.log("url: ", url);
-    console.log("target: ", target.files);
     setImg({
       preview: URL.createObjectURL(target.files[0]),
       raw: target.files[0],
@@ -69,9 +70,19 @@ const AccountPost = ({ setPageTitle }) => {
           onChange={({ target }) => setIdade(target.value)}
         />
         <input type="file" name="image" onChange={handleImage} />
-        <button type="submit" className="btn btn-medium" onClick={handleSubmit}>
-          Enviar
-        </button>
+        {sendingImage ? (
+          <button className="btn btn-medium" disabled>
+            Enviando...
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="btn btn-medium"
+            onClick={handleSubmit}
+          >
+            Enviar
+          </button>
+        )}
         {error && <p className="msg-error">Ocorreu um erro insperado!</p>}
       </form>
       <div>

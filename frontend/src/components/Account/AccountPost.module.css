@@ -30,6 +30,11 @@ button {
     border: none;
 }
 
+button:disabled {
+    cursor: wait;
+}
+
+
 
 .AccountPost .preview {
     width: 100%;
