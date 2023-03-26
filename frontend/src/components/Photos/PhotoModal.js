@@ -2,11 +2,13 @@ import React from "react";
 
 import styles from "./PhotoModal.module.css";
 import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
-import { PHOTO_GET } from "../../Api";
+import { PHOTO_GET, COMMENT_POST } from "../../Api";
 import Loader from "../Loader";
 
 const PhotoModal = ({ idPhoto, setShowModal }) => {
   const [photo, setPhoto] = React.useState(null);
+  const [comment, setComment] = React.useState("");
+  const [error, setError] = React.useState(false);
 
   function getPhoto() {
     const { url, options } = PHOTO_GET(idPhoto);
@@ -15,6 +17,23 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
       .then((json) => {
         setPhoto({ ...json.photo, comments: [...json.comments] });
       });
+  }
+
+  async function postComment() {
+    setError(false);
+    const { url, options } = COMMENT_POST(idPhoto, { comment });
+    const response = await fetch(url, options);
+    if (response.ok) {
+      getPhoto();
+      setComment("");
+    } else {
+      setError(true);
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    postComment();
   }
 
   React.useEffect(() => {
@@ -72,11 +91,20 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
                 className="input"
                 type="textarea"
                 placeholder="Comente..."
+                value={comment}
+                onChange={({ target }) => setComment(target.value)}
               ></textarea>
-              <button type="submit" className={styles.buttonSend}>
+              <button
+                type="submit"
+                className={styles.buttonSend}
+                onClick={handleSubmit}
+              >
                 <SendSvg />
               </button>
             </form>
+            {error && (
+              <span className={styles.error}>Ocorreu um erro insperado...</span>
+            )}
           </div>
         </div>
       ) : (
