@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./PhotoModal.module.css";
 import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
-import { PHOTO_GET, COMMENT_POST } from "../../Api";
+import { PHOTO_GET, COMMENT_POST, PHOTO_DELETE } from "../../Api";
 import Loader from "../Loader";
 
 const PhotoModal = ({ idPhoto, setShowModal }) => {
@@ -36,6 +36,17 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
     postComment();
   }
 
+  async function handleDelete(e) {
+    const confirmed = window.confirm("Tem certeza que deseja deletar?");
+    if (confirmed) {
+      const { url, options } = PHOTO_DELETE(idPhoto);
+      const response = await fetch(url, options);
+      if (response.ok) {
+        window.location.reload();
+      }
+    }
+  }
+
   React.useEffect(() => {
     getPhoto();
   }, []);
@@ -60,7 +71,9 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
           ></div>
           <div className={styles.modalInfo}>
             <div className={styles.action}>
-              <button className={styles.btnDelete}>Deletar</button>
+              <button className={styles.btnDelete} onClick={handleDelete}>
+                Deletar
+              </button>
               <span className={styles.acess}>{photo.acessos}</span>
             </div>
             <div className={`title-1 ${styles.modalDogName}`}>
