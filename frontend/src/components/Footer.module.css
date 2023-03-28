@@ -9,9 +9,6 @@
     font-size: 1.6rem;
     font-family: var(--font-first);
     color: var(--color-brown);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 .footer svg * {

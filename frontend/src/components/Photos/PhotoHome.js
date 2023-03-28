@@ -35,10 +35,15 @@ const Home = () => {
     getAccountPhotos();
   }, []);
 
-  if (loading) return <Loader />;
   return (
-    <main className={`container animeLeft ${styles.photoHome}`}>
-      <PhotoGrid photos={photos} />
+    <main className={` ${styles.photoHome}`}>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="container">
+          <PhotoGrid photos={photos} />
+        </div>
+      )}
     </main>
   );
 };

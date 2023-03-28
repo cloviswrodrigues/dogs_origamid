@@ -11,7 +11,7 @@ const PhotoGrid = ({ photos }) => {
   }
   return (
     <>
-      <section className={styles.photoGrid}>
+      <section className={`animeLeft ${styles.photoGrid}`}>
         {photos ? (
           <div className={styles.grid}>
             {photos.map((photo) => (

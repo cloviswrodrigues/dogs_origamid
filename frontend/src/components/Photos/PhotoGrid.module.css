@@ -8,7 +8,7 @@
     display: grid;
     gap: 1.5rem;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    height: 70vh;    
+    height: 85vh;    
 }
 
 .photoGrid .grid .gridItem {  
