@@ -64,8 +64,12 @@ export function PHOTO_POST(formData, token) {
 }
 
 export function PHOTOS_GET({ page, total, user }) {
+  const queryPage = "_page=" + page;
+  const queryTotal = total ? "&_total=" + total : "";
+  const queryUser = user ? "&_user=" + user : "";
+  const query = queryPage.concat(queryTotal, queryUser);
   return {
-    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    url: `${API_URL}/api/photo/?${query}`,
     options: {
       method: "GET",
       cache: "no-store",
