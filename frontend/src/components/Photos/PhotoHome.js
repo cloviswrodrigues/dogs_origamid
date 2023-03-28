@@ -37,7 +37,7 @@ const Home = () => {
 
   if (loading) return <Loader />;
   return (
-    <main className={`container ${styles.photoHome}`}>
+    <main className={`container animeLeft ${styles.photoHome}`}>
       <PhotoGrid photos={photos} />
     </main>
   );
