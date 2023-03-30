@@ -1,13 +1,36 @@
 import React from "react";
+
 import style from "./LoginScreen.module.css";
+import { USER_POST } from "../../Api";
+import { UserContext } from "../../Context/UserContext";
 
 const Register = () => {
   const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
+  const { userLogin } = React.useContext(UserContext);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+    setError(null);
+    setLoading(true);
+    const body = {
+      username,
+      password,
+      email,
+    };
+    const { url, options } = USER_POST(body);
+
+    const response = await fetch(url, options);
+    const json = await response.json();
+    if (response.ok) {
+      userLogin(username, password);
+    } else {
+      setError(json.message);
+    }
+    setLoading(false);
   }
   return (
     <div className={`animeLeft ${style.loginForm}`}>
@@ -34,10 +57,21 @@ const Register = () => {
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
-        <button type="submit" className="btn btn-medium" onClick={handleSubmit}>
-          Cadastrar
-        </button>
+        {loading ? (
+          <button type="submit" className="btn btn-medium" disabled>
+            Cadastrando...
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="btn btn-medium"
+            onClick={handleSubmit}
+          >
+            Cadastrar
+          </button>
+        )}
       </form>
+      {error && <span className={style.erroForm}>{error}</span>}
     </div>
   );
 };

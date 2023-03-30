@@ -41,5 +41,7 @@
 
 .erroForm {
     margin-top: 1rem;
+    font-family: var(--font-first);
+    font-size: 1.2rem;
     color: var(--color-red);
 }
