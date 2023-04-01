@@ -45,3 +45,10 @@
     font-size: 1.2rem;
     color: var(--color-red);
 }
+
+.successForm {
+    margin-top: 2rem;
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+    color: var(--color-green);
+}
