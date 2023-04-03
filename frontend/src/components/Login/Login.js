@@ -5,6 +5,7 @@ import style from "./Login.module.css";
 import LoginScreen from "./LoginScreen";
 import LostPassword from "./LostPassword";
 import Register from "./Register";
+import LoginReset from "./LoginReset";
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
@@ -17,6 +18,7 @@ const Login = () => {
           <Route path="/" element={<LoginScreen />} />
           <Route path="register" element={<Register />} />
           <Route path="lost-password" element={<LostPassword />} />
+          <Route path="reset-password" element={<LoginReset />} />
         </Routes>
       </section>
     </main>
