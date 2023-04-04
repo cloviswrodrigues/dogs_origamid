@@ -56,15 +56,26 @@
     border: 1px solid var(--color-black);
 }
 
-.acess {
+.author {
     font-family: var(--font-first);
     font-size: 1.6rem;
-    color: var(--color-medium-gray);
+    color: var(--color-dark-gray);
+}
+
+.author:hover {
+    text-decoration: underline;
+}
+
+
+.access {
+    font-family: var(--font-first);
+    font-size: 1.6rem;
+    color: var(--color-dark-gray);
     display: inline-block;
     width: 50px;
 }
 
-.acess:before {
+.access:before {
     content: '';
     display: inline-block;
     width: 16px;
