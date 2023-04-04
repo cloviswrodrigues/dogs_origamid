@@ -15,7 +15,7 @@ const LostPassword = () => {
     setResponseStatus(null);
     setLoading(true);
     const host = window.location.origin;
-    const urlCallBack = `${host}/login/resetar`;
+    const urlCallBack = `${host}/login/reset-password`;
     const body = {
       login,
       url: urlCallBack,
