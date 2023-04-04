@@ -12,15 +12,12 @@ const useFetch = () => {
       setStatus(null);
       response = await fetch(url, options);
       json = await response.json();
-      console.log("url: ", url);
-      console.log("status: ", response.status);
       setStatus(response.status);
       setData(json);
       if (status !== 200) {
         setError("Dados Incorretos");
       }
     } catch (error) {
-      console.log("caiu no catch");
       setError(error);
     }
     return { response };

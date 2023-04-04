@@ -15,15 +15,13 @@ const AccountMain = ({ setPageTitle }) => {
     try {
       setPhotos(null);
       const { url, options } = PHOTOS_GET({ page, total, user });
-      console.log("url2 ", url);
-      console.log("options ", options);
+
       const response = await fetch(url, options);
       const json = await response.json();
       if (json.length) {
         setPhotos(json);
       }
     } catch (error) {
-      console.log("error: ", error);
     } finally {
       setLoading(false);
     }

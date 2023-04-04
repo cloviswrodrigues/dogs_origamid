@@ -24,7 +24,6 @@ const LoginReset = () => {
       password: newPassword,
     };
 
-    console.log("body: ", body);
     const { url, options } = PASSWORD_RESET(body);
     const response = await fetch(url, options);
     const json = await response.json();
