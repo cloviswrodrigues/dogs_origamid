@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./PhotoGrid.module.css";
 import PhotoModal from "./PhotoModal";
 
+import Image from "../../Helper/Image";
+
 const PhotoGrid = ({ photos }) => {
   const [showModal, setShowModal] = React.useState(false);
   const [idPhoto, setIdPhoto] = React.useState(null);
@@ -15,12 +17,11 @@ const PhotoGrid = ({ photos }) => {
         {photos ? (
           <div className={styles.grid}>
             {photos.map((photo) => (
-              <div
-                key={photo.id}
-                className={styles.gridItem}
-                style={{ backgroundImage: `url(${photo.src})` }}
-                onClick={() => openPhotoModal(photo.id)}
-              >
+              <div key={photo.id} className={styles.gridItem}>
+                <Image
+                  onClick={() => openPhotoModal(photo.id)}
+                  src={photo.src}
+                />
                 <span className={styles.gridItemAcess}>{photo.acessos}</span>
               </div>
             ))}
