@@ -20,6 +20,7 @@
                         #fff 50%,
                         #eee 100%);
     background-color: #eee;
+    background-size: 200%;
     animation: skeleton 1.5s infinite linear;
 }
 
@@ -29,6 +30,5 @@
     }
     to {
         background-position: -200%;
-        background-color: red;
     }
 }
