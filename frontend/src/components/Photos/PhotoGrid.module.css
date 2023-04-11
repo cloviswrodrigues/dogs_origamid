@@ -1,3 +1,7 @@
+.photoGrid {    
+    margin-bottom: 1.5rem; 
+}
+
 .photoGrid p {
     font-size: 1.4rem;
     font-family: var(--font-first);
@@ -7,8 +11,7 @@
 .photoGrid .grid {
     display: grid;
     gap: 1.5rem;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    height: 85vh;    
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .photoGrid .grid .gridItem {  

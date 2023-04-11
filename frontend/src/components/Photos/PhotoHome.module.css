@@ -2,3 +2,11 @@
     padding: 3rem 0;
     min-height: 95vh;
 }
+
+.photoHome p {
+    margin: 4rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--font-first);
+    color: var(--color-medium-gray);
+}
