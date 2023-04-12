@@ -28,6 +28,10 @@ html {
     font-size: 10px;
 }
 
+body {
+    padding-top: 6.4rem;
+}
+
 .container {
     width: 100%;
     max-width: 80rem;
