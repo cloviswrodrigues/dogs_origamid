@@ -8,7 +8,7 @@ import Loader from "../Loader";
 
 const TOTAL_PHOTO = 6;
 
-const PhotoGrid = ({ page, setInfinite, openPhotoModal }) => {
+const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
   const [photos, setPhotos] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
@@ -16,7 +16,7 @@ const PhotoGrid = ({ page, setInfinite, openPhotoModal }) => {
     const total = TOTAL_PHOTO;
 
     try {
-      const { url, options } = PHOTOS_GET({ page, total });
+      const { url, options } = PHOTOS_GET({ page, total, user });
       const response = await fetch(url, options);
       const json = await response.json();
       const numberPhoto = json.length;
