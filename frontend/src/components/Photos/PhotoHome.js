@@ -4,7 +4,7 @@ import Feed from "../Feed/Feed";
 
 const Home = () => {
   return (
-    <main>
+    <main style={{ padding: "3rem 0" }}>
       <Feed />
     </main>
   );

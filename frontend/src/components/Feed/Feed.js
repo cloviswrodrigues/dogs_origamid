@@ -4,7 +4,7 @@ import styles from "./Feed.module.css";
 import PhotoGrid from "../Photos/PhotoGrid";
 import PhotoModal from "../Photos/PhotoModal";
 
-const Feed = ({ user = 0 }) => {
+const Feed = ({ user }) => {
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
   const [showModal, setShowModal] = React.useState(false);
@@ -52,7 +52,9 @@ const Feed = ({ user = 0 }) => {
             openPhotoModal={openPhotoModal}
           />
         ))}
-        {!infinite && <p>Não existem mais postagens.</p>}
+        {!infinite & (pages.length > 1) ? (
+          <p>Não existem mais postagens.</p>
+        ) : null}
       </div>
       {showModal && (
         <PhotoModal idPhoto={idPhoto} setShowModal={setShowModal} />
