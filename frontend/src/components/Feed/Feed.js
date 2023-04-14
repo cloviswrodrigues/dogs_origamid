@@ -46,6 +46,7 @@ const Feed = ({ user }) => {
       <div className="container">
         {pages.map((page) => (
           <PhotoGrid
+            key={page}
             page={page}
             user={user}
             setInfinite={setInfinite}

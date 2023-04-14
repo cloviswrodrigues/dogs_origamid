@@ -14,7 +14,6 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
 
   async function getAccountPhotos() {
     const total = TOTAL_PHOTO;
-    console.log("user: ", user);
     try {
       const { url, options } = PHOTOS_GET({ page, total, user });
       const response = await fetch(url, options);
