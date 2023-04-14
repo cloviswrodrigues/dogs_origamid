@@ -28,6 +28,12 @@
     background-size: cover !important;
 }
 
+.modalPhoto img {
+    height: 100%;
+}
+
+
+
 
 .modalInfo {
     padding: 3rem;

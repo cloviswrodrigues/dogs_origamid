@@ -6,6 +6,7 @@ import { ReactComponent as SendSvg } from "../../assets/enviar.svg";
 import { PHOTO_GET, COMMENT_POST, PHOTO_DELETE } from "../../Api";
 import Loader from "../Loader";
 import { UserContext } from "../../Context/UserContext";
+import Image from "../../Helper/Image";
 
 const PhotoModal = ({ idPhoto, setShowModal }) => {
   const [photo, setPhoto] = React.useState(null);
@@ -75,12 +76,9 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
     <div className={styles.modalBackground} onClick={handleModal}>
       {photo ? (
         <div className={styles.modal}>
-          <div
-            className={styles.modalPhoto}
-            style={{
-              background: `url('${photo.src}') no-repeat center`,
-            }}
-          ></div>
+          <div className={styles.modalPhoto}>
+            <Image src={photo.src} />
+          </div>
           <div className={styles.modalInfo}>
             <div className={styles.action}>
               {showBtnDelete ? (
