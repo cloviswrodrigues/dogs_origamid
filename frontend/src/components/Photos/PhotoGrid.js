@@ -36,7 +36,7 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
   if (loading) return <Loader />;
   return (
     <section className={styles.photoGrid}>
-      {photos ? (
+      {photos && (
         <div className={styles.grid}>
           {photos.map((photo) => (
             <div
@@ -49,9 +49,10 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
             </div>
           ))}
         </div>
-      ) : (
-        <p>Não há nenhumm foto para ser exibida...</p>
       )}
+      {!photos & (page == 1) ? (
+        <p>Não há nenhumm foto para ser exibida...</p>
+      ) : null}
     </section>
   );
 };
