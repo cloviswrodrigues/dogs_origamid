@@ -47,23 +47,17 @@ export const UserStorage = ({ children }) => {
     navigate("/login");
   }
 
-  console.log("usercontext");
-
   React.useEffect(() => {
     async function autoLogin() {
-      console.log("autoLogin");
       const token = window.localStorage.getItem("token");
-      console.log("token: ", token);
       if (token) {
         try {
           setLoading(true);
           const { url, options } = TOKEN_VALIDATE_POST(token);
           const response = await fetch(url, options);
-          console.log("response: ", response);
           if (!response.ok) throw new Error("Token inválido");
           const json = await response.json();
           await getUser(token);
-          console.log("getUser");
         } catch (err) {
           userLogout();
         } finally {
@@ -72,7 +66,6 @@ export const UserStorage = ({ children }) => {
       }
     }
     autoLogin();
-    console.log("use effect usercontext");
   }, []);
 
   return (

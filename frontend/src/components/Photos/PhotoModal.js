@@ -44,8 +44,6 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
   async function handleDelete(e) {
     const confirmed = window.confirm("Tem certeza que deseja deletar?");
     if (confirmed) {
-      console.log("delete confirmado");
-      console.log("idPhoto: ", idPhoto);
       const { url, options } = PHOTO_DELETE(idPhoto);
       const response = await fetch(url, options);
       if (response.ok) {

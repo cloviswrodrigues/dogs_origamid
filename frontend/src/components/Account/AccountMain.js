@@ -5,8 +5,6 @@ import { UserContext } from "../../Context/UserContext";
 const AccountMain = ({ setPageTitle }) => {
   const [user, setUser] = React.useState(null);
   const { data } = useContext(UserContext);
-  console.log("account main");
-  console.log("user: ", user);
 
   React.useEffect(() => {
     setUser(data);
