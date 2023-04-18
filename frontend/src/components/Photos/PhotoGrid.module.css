@@ -23,6 +23,7 @@
     background-position: center;
     background-size: cover;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .photoGrid .grid .gridItem:nth-child(2) {
