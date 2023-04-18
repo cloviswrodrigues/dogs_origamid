@@ -13,7 +13,7 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
   const [comment, setComment] = React.useState("");
   const [error, setError] = React.useState(false);
   const [showBtnDelete, setShowBtnDelete] = React.useState(false);
-  const { data: userdata } = React.useContext(UserContext);
+  const { data: userdata, login } = React.useContext(UserContext);
 
   function getPhoto() {
     const { url, options } = PHOTO_GET(idPhoto);
@@ -119,22 +119,24 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
             </ul>
           </div>
           <div className={styles.modalFormComents}>
-            <form>
-              <textarea
-                className="input"
-                type="textarea"
-                placeholder="Comente..."
-                value={comment}
-                onChange={({ target }) => setComment(target.value)}
-              ></textarea>
-              <button
-                type="submit"
-                className={styles.buttonSend}
-                onClick={handleSubmit}
-              >
-                <SendSvg />
-              </button>
-            </form>
+            {login && (
+              <form>
+                <textarea
+                  className="input"
+                  type="textarea"
+                  placeholder="Comente..."
+                  value={comment}
+                  onChange={({ target }) => setComment(target.value)}
+                ></textarea>
+                <button
+                  type="submit"
+                  className={styles.buttonSend}
+                  onClick={handleSubmit}
+                >
+                  <SendSvg />
+                </button>
+              </form>
+            )}
             {error && (
               <span className={styles.error}>Ocorreu um erro insperado...</span>
             )}
