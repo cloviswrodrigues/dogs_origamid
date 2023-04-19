@@ -15,14 +15,15 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
   async function getAccountPhotos() {
     const total = TOTAL_PHOTO;
     try {
+      console.log("to aqui");
       const { url, options } = PHOTOS_GET({ page, total, user });
       const response = await fetch(url, options);
       const json = await response.json();
       const numberPhoto = json.length;
       if (numberPhoto) {
         setPhotos([...json]);
-        if (numberPhoto < TOTAL_PHOTO) setInfinite(false);
       }
+      if (numberPhoto < TOTAL_PHOTO) setInfinite(false);
     } catch (error) {
     } finally {
       setLoading(false);
