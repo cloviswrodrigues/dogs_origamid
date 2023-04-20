@@ -3,6 +3,7 @@ import React from "react";
 import style from "./LoginScreen.module.css";
 import { USER_POST } from "../../Api";
 import { UserContext } from "../../Context/UserContext";
+import Head from "../../Helper/Head";
 
 const Register = () => {
   const [username, setUsername] = React.useState("");
@@ -34,6 +35,7 @@ const Register = () => {
   }
   return (
     <div className={`animeLeft ${style.loginForm}`}>
+      <Head title="Crie sua conta" />
       <h1 className="title-1">Cadastre-se</h1>
       <form action="">
         <label htmlFor="username">Usuário</label>

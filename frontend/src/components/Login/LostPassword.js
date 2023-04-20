@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./LoginScreen.module.css";
 import { PASSWORD_LOST } from "../../Api";
+import Head from "../../Helper/Head";
 
 const SUCCESS = "success";
 const ERROR = "error";
@@ -32,6 +33,7 @@ const LostPassword = () => {
 
   return (
     <div className={`animeLeft ${style.loginForm}`}>
+      <Head title="Perdeu a senha" />
       <h1 className="title-1">Perdeu a senha</h1>
       {responseStatus === SUCCESS ? (
         <p className={style.successForm}>Email enviado</p>

@@ -7,6 +7,7 @@ import LostPassword from "./LostPassword";
 import Register from "./Register";
 import LoginReset from "./LoginReset";
 import PageNotFound from "../PageNotFound";
+import Head from "../../Helper/Head";
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
@@ -14,6 +15,7 @@ const Login = () => {
   if (login === true) return <Navigate to="/conta" />;
   return (
     <main className={style.login}>
+      <Head title="Login" />
       <section className={style.forms}>
         <Routes>
           <Route path="/" element={<LoginScreen />} />

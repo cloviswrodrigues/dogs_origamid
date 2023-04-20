@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Feed from "../Feed/Feed";
 import { UserContext } from "../../Context/UserContext";
+import Head from "../../Helper/Head";
 
 const AccountMain = ({ setPageTitle }) => {
   const [user, setUser] = React.useState(null);
@@ -15,7 +16,12 @@ const AccountMain = ({ setPageTitle }) => {
   }, []);
 
   if (!user) return null;
-  return <Feed user={user.id} />;
+  return (
+    <>
+      <Head title="Minha Conta" />
+      <Feed user={user.id} />
+    </>
+  );
 };
 
 export default AccountMain;

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PHOTO_POST } from "../../Api";
 import style from "./AccountPost.module.css";
+import Head from "../../Helper/Head";
 
 const AccountPost = ({ setPageTitle }) => {
   const [nome, setNome] = React.useState("");
@@ -47,6 +48,7 @@ const AccountPost = ({ setPageTitle }) => {
 
   return (
     <section className={`${style.AccountPost} animeLeft`}>
+      <Head title="Poste sua foto" />
       <form>
         <label htmlFor="nome">Nome</label>
         <input
