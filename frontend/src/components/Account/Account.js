@@ -10,6 +10,7 @@ import AccountMain from "./AccountMain";
 import AccountStatistics from "./AccountStatistics";
 import AccountPost from "./AccountPost";
 import { UserContext } from "../../Context/UserContext";
+import PageNotFound from "../PageNotFound";
 
 const Account = () => {
   const [pageTitle, setPageTitle] = React.useState("");
@@ -63,6 +64,7 @@ const Account = () => {
             path="postar"
             element={<AccountPost setPageTitle={setPageTitle} />}
           />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </section>
     </main>

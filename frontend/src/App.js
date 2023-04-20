@@ -8,6 +8,7 @@ import PhotoProfile from "./components/Photos/PhotoProfile";
 import Login from "./components/Login/Login";
 import Account from "./components/Account/Account";
 import ProtectedRoute from "./Helper/ProtectedRoute";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Footer />
         </UserStorage>

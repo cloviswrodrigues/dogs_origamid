@@ -6,6 +6,7 @@ import LoginScreen from "./LoginScreen";
 import LostPassword from "./LostPassword";
 import Register from "./Register";
 import LoginReset from "./LoginReset";
+import PageNotFound from "../PageNotFound";
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
@@ -19,6 +20,7 @@ const Login = () => {
           <Route path="register" element={<Register />} />
           <Route path="lost-password" element={<LostPassword />} />
           <Route path="reset-password" element={<LoginReset />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </section>
     </main>
