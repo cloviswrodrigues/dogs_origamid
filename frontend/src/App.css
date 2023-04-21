@@ -165,3 +165,7 @@ button:disabled {
         opacity: 1;
     }
 }
+
+.VictoryContainer {
+    padding-right: 1rem;
+}
