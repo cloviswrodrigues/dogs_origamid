@@ -20,7 +20,7 @@ const Account = () => {
       <section className="container">
         <div className={style.accountHeader}>
           <h1 className="title-1">{pageTitle}</h1>
-          <nav>
+          <nav className={style.menuDesktop}>
             <NavLink
               to="/conta"
               end
@@ -50,6 +50,39 @@ const Account = () => {
               <LogoffSvg />
             </button>
           </nav>
+          <div>
+            <button className={style.menuHamburger}></button>
+            <nav className={style.menuMobile}>
+              <NavLink
+                to="/conta"
+                end
+                className={({ isActive }) =>
+                  isActive ? style.active : undefined
+                }
+              >
+                <FeedSvg />
+              </NavLink>
+              <NavLink
+                to="/conta/estatisticas"
+                className={({ isActive }) =>
+                  isActive ? style.active : undefined
+                }
+              >
+                <StatisticsSvg />
+              </NavLink>
+              <NavLink
+                to="/conta/postar"
+                className={({ isActive }) =>
+                  isActive ? style.active : undefined
+                }
+              >
+                <AddSvg />
+              </NavLink>
+              <button onClick={userLogout}>
+                <LogoffSvg />
+              </button>
+            </nav>
+          </div>
         </div>
         <Routes>
           <Route

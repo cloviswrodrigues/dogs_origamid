@@ -43,3 +43,19 @@
     fill: var(--color-yellow);    
 }
 
+.menuHamburger {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-light-gray);
+    border-radius: .2rem; 
+}
+
+.menuMobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 90rem) {
+    .menuDesktop {
+        display: none !important;
+    }
+}
