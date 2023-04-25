@@ -6,16 +6,17 @@
 .accountHeader {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 5rem;
+    position: relative;
 }
 
-.accountHeader nav{
+.accountHeader .menu {
     display: flex;
     gap: 2rem;
 }
 
-.accountHeader svg {
+.accountHeader .menu svg {
     padding: .5rem;
     width: 3.8rem;
     height: 3.8rem;
@@ -25,37 +26,112 @@
     border-radius: .2rem;
 }
 
-.accountHeader svg:hover {
+.accountHeader .menu svg:hover {
     background-color: var(--color-white);    
     border: 1px solid var(--color-black);
     border-radius: .2rem;
 }
 
-.accountHeader .active svg {
+.accountHeader .menu .active  svg {
     background: var(--color-white);
     border: 1px solid var(--color-yellow) !important;
     box-shadow: 0px 0px 0px 3px var(--color-light-yellow) !important; 
     border-radius: .2rem;   
 }
 
-.accountHeader .active svg path,
-.accountHeader .active svg rect {
+.accountHeader .menu .active svg path,
+.accountHeader .menu .active svg rect {
     fill: var(--color-yellow);    
 }
 
-.menuHamburger {
-    width: 4rem;
-    height: 4rem;
-    background-color: var(--color-light-gray);
-    border-radius: .2rem; 
+.buttonHamburger {
+    background: #eee;
+    border-radius: 0.32rem;
+    height: 40px;
+    width: 40px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: 0.1s;
+    cursor: pointer;
+    margin-top: .5rem;
+}
+  
+.buttonHamburger::after {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    box-shadow: 0 6px currentColor, 0 -6px currentColor;
+    transition: 0.2s;
+}
+  
+.buttonHamburger:focus,
+.buttonHamburger:hover,
+.buttonHamburgerActive {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+    color: #fb1;
+}
+  
+.buttonHamburgerActive::after {
+    transform: rotate(90deg);
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 8px currentColor, 0 -8px currentColor;
 }
 
 .menuMobile {
-    display: none !important;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 18rem;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 2px #0003;
+    border-radius: 5px;
+    padding: 0 1.5rem;
+    font-size: 1.6rem;
+    font-family: var(--font-first);
+    opacity: 0;
+    z-index: 100;
+    pointer-events: none;
 }
 
-@media screen and (max-width: 90rem) {
-    .menuDesktop {
-        display: none !important;
-    }
+.menuMobile > * {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;    
+    background: none;
+}
+
+.menuMobile a,
+.menuMobile button {
+    cursor: pointer;
+}
+
+.menuMobile a + a {
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.menuMobile a + button {
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.menuMobile a:hover svg > *,
+.menuMobile button:hover  svg > * {
+    fill: #fb1;
+}
+
+.menuMobileActive {
+    opacity: 1;
+    pointer-events: initial;
 }
