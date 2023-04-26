@@ -18,3 +18,18 @@
     padding: 5rem;
     margin-top: 16rem;
 }
+
+@media screen and (max-width: 64rem) {
+    .login {
+        grid-template-columns: 1fr;
+        margin-bottom: 3rem;
+    }   
+
+    .login:before {
+        display: none;
+    }
+
+    .login .forms {
+        padding: 1.5rem;
+    }
+}
