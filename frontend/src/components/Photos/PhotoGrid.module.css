@@ -58,3 +58,15 @@
     height: 10px;
     background: url(../../assets/visualizacao.svg) no-repeat;
 }
+
+@media screen and (max-width: 64rem) {
+    .photoGrid .grid {
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }    
+
+    .photoGrid .grid .gridItem:nth-child(2) {
+        grid-column: initial;
+        grid-row: initial;
+    }    
+}
