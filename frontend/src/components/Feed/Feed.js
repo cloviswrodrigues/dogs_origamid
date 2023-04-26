@@ -9,6 +9,7 @@ const Feed = ({ user }) => {
   const [infinite, setInfinite] = React.useState(true);
   const [showModal, setShowModal] = React.useState(false);
   const [idPhoto, setIdPhoto] = React.useState(null);
+  const [wait, setWait] = React.useState(false);
 
   function openPhotoModal(idPhoto) {
     setIdPhoto(idPhoto);
@@ -16,7 +17,6 @@ const Feed = ({ user }) => {
   }
 
   React.useEffect(() => {
-    let wait = false;
     function infiteScroll() {
       if (infinite) {
         const scroll = window.scrollY;
@@ -24,11 +24,7 @@ const Feed = ({ user }) => {
 
         if (scroll > height * 0.75 && !wait) {
           setPages((pages) => [...pages, pages.length + 1]);
-
-          wait = true;
-          setTimeout(() => {
-            wait = false;
-          }, 500);
+          setWait(true);
         }
       }
     }
@@ -39,7 +35,7 @@ const Feed = ({ user }) => {
       window.removeEventListener("wheel", infiteScroll);
       window.removeEventListener("scroll", infiteScroll);
     };
-  }, [infinite]);
+  }, [infinite, wait]);
 
   return (
     <section className={` ${styles.photoHome}`}>
@@ -51,6 +47,7 @@ const Feed = ({ user }) => {
             user={user}
             setInfinite={setInfinite}
             openPhotoModal={openPhotoModal}
+            setWait={setWait}
           />
         ))}
         {!infinite & (pages.length > 1) ? (

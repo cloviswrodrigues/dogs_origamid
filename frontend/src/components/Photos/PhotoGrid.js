@@ -8,7 +8,7 @@ import Loader from "../Loader";
 
 const TOTAL_PHOTO = 6;
 
-const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
+const PhotoGrid = ({ page, user, setInfinite, openPhotoModal, setWait }) => {
   const [photos, setPhotos] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
@@ -26,6 +26,9 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal }) => {
     } catch (error) {
     } finally {
       setLoading(false);
+      setTimeout(() => {
+        setWait(false);
+      }, 500);
     }
   }
 
