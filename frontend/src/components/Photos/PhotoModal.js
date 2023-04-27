@@ -96,14 +96,16 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
               )}
               <span className={styles.access}>{photo.acessos}</span>
             </div>
-            <div className={`title-1 ${styles.modalDogName}`}>
-              {photo.title}
-            </div>
-            <div className={styles.modalDogInfo}>
-              <span>| {photo.peso}</span>
-              <span>
-                | {photo.idade} {photo.idade > 1 ? "anos" : "ano"}
-              </span>
+            <div className={styles.modalDog}>
+              <div className={`title-1 ${styles.modalDogName}`}>
+                {photo.title}
+              </div>
+              <div className={styles.modalDogInfo}>
+                <span>| {photo.peso} kg </span>{" "}
+                <span>
+                  | {photo.idade} {photo.idade > 1 ? "anos" : "ano"}
+                </span>
+              </div>
             </div>
           </div>
           <div className={styles.modalComents}>

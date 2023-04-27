@@ -32,9 +32,6 @@
     height: 100%;
 }
 
-
-
-
 .modalInfo {
     padding: 3rem;
 }
@@ -179,4 +176,61 @@
     }
 }
   
+
+@media screen and (max-width: 64rem) {    
+    .modal {
+        grid-template: 1fr 1fr 3fr 1fr / 1fr;  
+        width: 90vw;
+    }
+
+    .modalPhoto {
+        grid-row: initial;
+    }
+    
+    .modalInfo {
+        padding: 1rem;
+    }
+
+    .action {
+        margin-bottom: .5rem;
+    }
+
+    .access {
+        font-size: 1.4rem;
+        width: 75px;   
+    }   
+
+    .modalDog {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modalDogName {
+        font-size: 4rem;
+    }
+
+    .modalDogInfo {
+        margin-top: 0;
+        font-size: 1.6rem;
+        text-align: right;
+    }    
+
+    .modalDogInfo span {
+        margin: 0;
+    }
+
+    .modalDogInfo span + span {
+        margin-left: 2rem;
+    }
+
+    .modalComents {
+        padding: 1rem;
+    }
+
+    .modalFormComents {
+        padding: 1rem;
+    }
+    
+}
   
