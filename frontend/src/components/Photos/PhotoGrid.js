@@ -12,29 +12,29 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal, setWait }) => {
   const [photos, setPhotos] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
-  async function getAccountPhotos() {
-    const total = TOTAL_PHOTO;
-    try {
-      const { url, options } = PHOTOS_GET({ page, total, user });
-      const response = await fetch(url, options);
-      const json = await response.json();
-      const numberPhoto = json.length;
-      if (numberPhoto) {
-        setPhotos([...json]);
-      }
-      if (numberPhoto < TOTAL_PHOTO) setInfinite(false);
-    } catch (error) {
-    } finally {
-      setLoading(false);
-      setTimeout(() => {
-        setWait(false);
-      }, 500);
-    }
-  }
-
   React.useEffect(() => {
+    async function getAccountPhotos() {
+      const total = TOTAL_PHOTO;
+      try {
+        const { url, options } = PHOTOS_GET({ page, total, user });
+        const response = await fetch(url, options);
+        const json = await response.json();
+        const numberPhoto = json.length;
+        if (numberPhoto) {
+          setPhotos([...json]);
+        }
+        if (numberPhoto < TOTAL_PHOTO) setInfinite(false);
+      } catch (error) {
+      } finally {
+        setLoading(false);
+        setTimeout(() => {
+          setWait(false);
+        }, 500);
+      }
+    }
+
     getAccountPhotos();
-  }, []);
+  }, [page, user, setInfinite, setWait]);
 
   if (loading) return <Loader />;
   return (
@@ -53,7 +53,7 @@ const PhotoGrid = ({ page, user, setInfinite, openPhotoModal, setWait }) => {
           ))}
         </div>
       )}
-      {!photos & (page == 1) ? (
+      {!photos & (page === 1) ? (
         <p>Não há nenhumm foto para ser exibida...</p>
       ) : null}
     </section>
