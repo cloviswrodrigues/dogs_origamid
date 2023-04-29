@@ -45,3 +45,16 @@ button:disabled {
     background-size: cover;
     background-position: center;
 }
+
+@media screen and (max-width: 64rem) {
+    .AccountPost {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 35rem;
+        gap: 1rem;
+    }
+
+    .AccountPost .preview {
+        margin: auto;
+        height: 100%;
+    }
+}
