@@ -1,5 +1,7 @@
 .wrapper {
     display: grid;
+    grid-auto-rows: 100%;
+    justify-items: center;
     height: 100%;
 }
 

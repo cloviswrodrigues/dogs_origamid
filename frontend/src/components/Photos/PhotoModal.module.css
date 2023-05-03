@@ -29,6 +29,8 @@
 }
 
 .modalPhoto img {
+    width: auto !important;
+    max-width: 100%;
     height: 100%;
 }
 
@@ -181,16 +183,17 @@
     .modal {
         grid-template: 1fr 1fr 3fr 1fr / 1fr;  
         width: 86vw;
+        max-width: 64rem;
         height: 94vh;
     }
 
     .modalPhoto {
         grid-row: initial;
-        height: 50rem;
+        height: 50vh;
     }
     
     .modalInfo {
-        padding: 1rem;
+        padding: 2rem;
     }
 
     .action {
@@ -227,11 +230,11 @@
     }
 
     .modalComents {
-        padding: 1rem;
+        padding: 0 2rem;
     }
 
     .modalFormComents {
-        padding: 1rem;
+        padding: 2rem;
     }
     
 }
