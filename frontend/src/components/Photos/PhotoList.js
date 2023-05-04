@@ -21,7 +21,6 @@ const PhotoList = ({ page, user, setInfinite, setWait }) => {
   }
 
   function deletePhotoList(idPhoto) {
-    console.log("aeeeeeeeeeeeeeeeeeeeeeee");
     setPhotos((prevState) => prevState.filter((photo) => photo.id !== idPhoto));
   }
 
