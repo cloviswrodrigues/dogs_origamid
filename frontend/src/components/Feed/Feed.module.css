@@ -1,10 +1,9 @@
 .photoHome {
     min-height: 95vh;
+    margin-bottom: 5rem;
 }
 
 .photoHome p {
-    margin: 4rem;
-    text-align: center;
     font-size: 1.6rem;
     font-family: var(--font-first);
     color: var(--color-medium-gray);
@@ -15,6 +14,17 @@
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+.noPosts {
+    position: absolute;
+    bottom: -5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--font-first);
+    color: var(--color-medium-gray);
 }
 
 @media screen and (max-width: 64rem) {

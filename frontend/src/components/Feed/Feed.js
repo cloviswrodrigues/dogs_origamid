@@ -42,7 +42,7 @@ const Feed = ({ user }) => {
           />
         ))}
         {!infinite & (pages.length > 1) ? (
-          <p>Não existem mais postagens.</p>
+          <div className={styles.noPosts}>Não existem mais postagens.</div>
         ) : null}
       </div>
     </section>
