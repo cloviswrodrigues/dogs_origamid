@@ -63,7 +63,7 @@ const PhotoList = ({ page, user, setInfinite, setWait }) => {
           </div>
         ))}
       {!photos & (page === 1) ? (
-        <div>
+        <div className={styles.noPosts}>
           <p>Não há nenhumm foto para ser exibida...</p>
         </div>
       ) : null}

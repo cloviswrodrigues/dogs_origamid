@@ -53,6 +53,10 @@
     background: url(../../assets/visualizacao.svg) no-repeat;
 }
 
+.noPosts {
+    grid-column: 1/4;
+}
+
 @media screen and (max-width: 64rem) {
     .gridItem:nth-child(2) {
         grid-column: initial;
