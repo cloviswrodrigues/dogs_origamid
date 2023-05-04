@@ -1,20 +1,12 @@
 import React from "react";
 
 import styles from "./Feed.module.css";
-import PhotoGrid from "../Photos/PhotoGrid";
-import PhotoModal from "../Photos/PhotoModal";
+import PhotoList from "../Photos/PhotoList";
 
 const Feed = ({ user }) => {
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
-  const [showModal, setShowModal] = React.useState(false);
-  const [idPhoto, setIdPhoto] = React.useState(null);
   const [wait, setWait] = React.useState(false);
-
-  function openPhotoModal(idPhoto) {
-    setIdPhoto(idPhoto);
-    setShowModal(true);
-  }
 
   React.useEffect(() => {
     function infiteScroll() {
@@ -39,14 +31,13 @@ const Feed = ({ user }) => {
 
   return (
     <section className={` ${styles.photoHome}`}>
-      <div className="container">
+      <div className={`container ${styles.grid}`}>
         {pages.map((page) => (
-          <PhotoGrid
+          <PhotoList
             key={page}
             page={page}
             user={user}
             setInfinite={setInfinite}
-            openPhotoModal={openPhotoModal}
             setWait={setWait}
           />
         ))}
@@ -54,9 +45,6 @@ const Feed = ({ user }) => {
           <p>Não existem mais postagens.</p>
         ) : null}
       </div>
-      {showModal && (
-        <PhotoModal idPhoto={idPhoto} setShowModal={setShowModal} />
-      )}
     </section>
   );
 };

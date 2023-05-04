@@ -7,8 +7,9 @@ import { PHOTO_GET, COMMENT_POST, PHOTO_DELETE } from "../../Api";
 import Loader from "../Loader";
 import { UserContext } from "../../Context/UserContext";
 import Image from "../../Helper/Image";
+import { createPortal } from "react-dom";
 
-const PhotoModal = ({ idPhoto, setShowModal }) => {
+const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
   const [photo, setPhoto] = React.useState(null);
   const [comment, setComment] = React.useState("");
   const [error, setError] = React.useState(false);
@@ -47,7 +48,8 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
       const { url, options } = PHOTO_DELETE(idPhoto);
       const response = await fetch(url, options);
       if (response.ok) {
-        window.location.reload();
+        setShowModal(false);
+        deletePhotoList(idPhoto);
       }
     }
   }
@@ -72,7 +74,7 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
     }
   }
 
-  return (
+  return createPortal(
     <div className={styles.modalBackground} onClick={handleModal}>
       {photo ? (
         <div className={styles.modal}>
@@ -147,7 +149,8 @@ const PhotoModal = ({ idPhoto, setShowModal }) => {
       ) : (
         <Loader />
       )}
-    </div>
+    </div>,
+    document.getElementById("modal-root")
   );
 };
 

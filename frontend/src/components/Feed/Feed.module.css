@@ -9,3 +9,17 @@
     font-family: var(--font-first);
     color: var(--color-medium-gray);
 }
+
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 64rem) {
+    .photoGrid .grid {
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }    
+}
