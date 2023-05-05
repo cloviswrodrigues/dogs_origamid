@@ -15,6 +15,7 @@ const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
   const [error, setError] = React.useState(false);
   const [showBtnDelete, setShowBtnDelete] = React.useState(false);
   const { data: userdata, login } = React.useContext(UserContext);
+  const [showConfirmDeletion, setShowConfirmDeletion] = React.useState(false);
 
   function getPhoto() {
     const { url, options } = PHOTO_GET(idPhoto);
@@ -43,14 +44,19 @@ const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
   }
 
   async function handleDelete(e) {
-    const confirmed = window.confirm("Tem certeza que deseja deletar?");
-    if (confirmed) {
-      const { url, options } = PHOTO_DELETE(idPhoto);
-      const response = await fetch(url, options);
-      if (response.ok) {
-        setShowModal(false);
-        deletePhotoList(idPhoto);
-      }
+    setShowConfirmDeletion(true);
+  }
+
+  function noConfirmDelete() {
+    setShowConfirmDeletion(false);
+  }
+
+  async function confirmDelete() {
+    const { url, options } = PHOTO_DELETE(idPhoto);
+    const response = await fetch(url, options);
+    if (response.ok) {
+      setShowModal(false);
+      deletePhotoList(idPhoto);
     }
   }
 
@@ -78,6 +84,19 @@ const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
     <div className={styles.modalBackground} onClick={handleModal}>
       {photo ? (
         <div className={styles.modal}>
+          {showConfirmDeletion && (
+            <div className={styles.modalAlert}>
+              <div className={styles.confirmDelete}>
+                <div>Tem certeza que deseja deletar ?</div>
+                <button className="btn btn-medium" onClick={confirmDelete}>
+                  Sim
+                </button>
+                <button className={styles.noDelete} onClick={noConfirmDelete}>
+                  Não
+                </button>
+              </div>
+            </div>
+          )}
           <div className={styles.modalPhoto}>
             <Image src={photo.src} />
           </div>
