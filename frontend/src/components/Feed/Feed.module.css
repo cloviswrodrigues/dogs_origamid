@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 64rem) {
-    .photoGrid .grid {
+    .grid {
         gap: 1.5rem;
         grid-template-columns: repeat(2, 1fr);
     }    
