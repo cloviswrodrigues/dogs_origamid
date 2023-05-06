@@ -1,4 +1,5 @@
 import React from "react";
+import { createPortal } from "react-dom";
 
 import styles from "./Loader.module.css";
 
@@ -24,7 +25,7 @@ const Loader = () => {
     };
   }, []);
 
-  return (
+  return createPortal(
     <div className={styles.wrapper}>
       <div className={styles.Loader}>
         <svg
@@ -106,7 +107,8 @@ const Loader = () => {
           </g>
         </svg>
       </div>
-    </div>
+    </div>,
+    document.getElementById("loader-root")
   );
 };
 
