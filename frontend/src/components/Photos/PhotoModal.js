@@ -16,6 +16,8 @@ const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
   const [showBtnDelete, setShowBtnDelete] = React.useState(false);
   const { data: userdata, login } = React.useContext(UserContext);
   const [showConfirmDeletion, setShowConfirmDeletion] = React.useState(false);
+  const [disabledButtonDeletion, setDisabledButtonDeletion] =
+    React.useState(false);
 
   function getPhoto() {
     const { url, options } = PHOTO_GET(idPhoto);
@@ -52,12 +54,15 @@ const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
   }
 
   async function confirmDelete() {
+    setDisabledButtonDeletion(true);
     const { url, options } = PHOTO_DELETE(idPhoto);
     const response = await fetch(url, options);
     if (response.ok) {
       setShowModal(false);
       deletePhotoList(idPhoto);
     }
+
+    setDisabledButtonDeletion(false);
   }
 
   React.useEffect(() => {
@@ -88,10 +93,18 @@ const PhotoModal = ({ idPhoto, setShowModal, deletePhotoList }) => {
             <div className={styles.modalAlert}>
               <div className={styles.confirmDelete}>
                 <div>Tem certeza que deseja deletar ?</div>
-                <button className="btn btn-medium" onClick={confirmDelete}>
+                <button
+                  className="btn btn-medium"
+                  onClick={confirmDelete}
+                  disabled={disabledButtonDeletion}
+                >
                   Sim
                 </button>
-                <button className={styles.noDelete} onClick={noConfirmDelete}>
+                <button
+                  className={styles.noDelete}
+                  onClick={noConfirmDelete}
+                  disabled={disabledButtonDeletion}
+                >
                   Não
                 </button>
               </div>
